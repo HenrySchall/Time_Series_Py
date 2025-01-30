@@ -1,8 +1,6 @@
 ## Séries Temporais
 ### Introduction
-> A Time Series is a set of observations ordered in time or a particular slice of an unknown stochastic process.
-
-#### Mathematically: Y = Tdt + Szt + et.
+> A Time Series is a set of observations ordered in time or a particular slice of an unknown stochastic process. Mathematically: Y = Tdt + Szt + et.
 
 * Trend (Tdt): Gradual changes in the long term (population growth).
 * Seasonality (Szt): upward and downward oscillations that always occur in a given period (higher electricity bills in winter).
@@ -17,7 +15,7 @@
 
 ### Initial Concepts
 
-Stochastic Process -> is a collection of random variables defined in the same probability space (process generating a series of variables). The description of a stochastic process is done through a joint probability distribution (which is very complex to do), so we usually describe it through the functions:
+> Stochastic Process -> is a collection of random variables defined in the same probability space (process generating a series of variables). The description of a stochastic process is done through a joint probability distribution (which is very complex to do), so we usually describe it through the functions:
 - $𝜇(𝑡)=𝐸{𝑍(𝑡)}$ -> Average
 - $𝜎^2(𝑡)=𝑉𝑎𝑟{𝑍(𝑡)}$ -> Variance 
 - $𝛾(𝑡1,𝑡2)=𝐶𝑜𝑣{𝑍(𝑡1),𝑍(𝑡2)}$ -> Autocovariance
@@ -29,7 +27,7 @@ Stochastic Process -> is a collection of random variables defined in the same pr
 - Weak Stationarity = when the statistical properties are constant over time, E(x) = U, Var(x) = 𝜎², COV(X,X-n) = k (covariance between observations at different points in time depends on the specific time at which they occurred). In the literature, stationarity generally means weak stationarity.
 - Strong Stationarity = also called strict stationarity, is when the joint probability function is invariant over time, that is, the individual distributions are the same for all "ts". Therefore, the covariance depends only on the distance between the observations and not on the specific time at which they occurred.
 
-Autocorrelation -> is the correlation of certain previous periods with the current period, that is, the degree of serial dependence. Each period of this type of correlation is called lag and its representation is made by the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PAF), both of which compare the present value with the past values ​​of the series. The difference between them is that the CAF analyzes both direct and indirect correlation, while the PAF only analyzes direct correlation. So we can say that the CAF sees the direct correlation of the month of January in March and also the indirect correlation that the month of January had in February, which also had in March, while the PAF only the correlation of January in March. This analysis is done because it is the essential assumption for creating efficient forecasts of a series.
+> Autocorrelation -> is the correlation of certain previous periods with the current period, that is, the degree of serial dependence. Each period of this type of correlation is called lag and its representation is made by the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PAF), both of which compare the present value with the past values ​​of the series. The difference between them is that the CAF analyzes both direct and indirect correlation, while the PAF only analyzes direct correlation. So we can say that the CAF sees the direct correlation of the month of January in March and also the indirect correlation that the month of January had in February, which also had in March, while the PAF only the correlation of January in March. This analysis is done because it is the essential assumption for creating efficient forecasts of a series.
 
 ![FAC](https://github.com/user-attachments/assets/4623a946-6427-4bc2-aadc-d8219df93db9)
 
@@ -41,8 +39,7 @@ Autocorrelation -> is the correlation of certain previous periods with the curre
 
 ![Captura de tela 2025-01-30 132421](https://github.com/user-attachments/assets/0fbabff6-f692-48ad-bc84-bea27f7f30ae)
 
-Random Walk -> is the sum of small stochastic fluctuations (stochastic trend) 
-#### Mathematically: 𝑍𝑡=𝑍(𝑡−1)+et
+> Random Walk -> is the sum of small stochastic fluctuations (stochastic trend). Mathematically: 𝑍𝑡=𝑍(𝑡−1)+et
 
 ![Captura de tela 2025-01-30 132324](https://github.com/user-attachments/assets/bf7ce3a1-560b-45ad-9d1c-459cea90fe26)
 
@@ -77,26 +74,31 @@ Structure:
 - Autoregressive (AR): indicates that the variable is regressed on its previous values.
 - Integrated (I): indicates that the data values ​​were replaced with the difference between their values ​​and the previous values ​​(differencing).
 - Moving average (MA): Indicates that the regression error is a linear combination of the error terms of the past values.
+- 
+Coding: (p, d, q) Parameter d can only be an integer, if we were working with an ARFIMA Model, the parameter d can be fractional
+- p = order of autoregression.
+- d = degree of differentiation.
+- q = order of the moving average.
 
-Codificação: (p, d, q) Parâmetro d só pode ser inteiro, caso estivessemos trabalhando com um Modelo ARFIMA, o parâmetro d pode ser fracionado
+> When we add seasonality, in addition to the Arima coding (p, d, q), we include the coding for Seasonality (P, D, Q). Then a SARIMA model is defined by: (p, d, q)(P, D, Q)
+Examples:
 
-- p = ordem da autorregressão.
-- d = grau de diferenciação.
-- q = ordem da média móvel.
+- ARFIMA model: (1, 0.25, 1)
+- ARIMA model: (2, 1, 1)
+- AR model: (1, 0, 0)
+- MA model (0, 0, 3)
+- I model: (0, 2, 0)
+- ARMA model: (4, 0, 1)
+- SARIMA model: (1, 1, 2)(2, 0, 1)
 
-Quando adicionamos a sazonalidade, além da codificação Arima (p, d, q), incluimos a codificação para a Sazonalidade (P, D, Q). Então um modelo SARIMA é definido por: (p, d, q)(P, D, Q)
+Akaike's Information Criterion (AIC) and the Bayesian Information Criterion (BIC)
+> In more advanced models, the autocorrelation and partial autocorrelation functions are not informative for defining the order of the models, so an information criterion is used. An information criterion is a way of finding the ideal number of parameters for a model. To understand it, keep in mind that, with each additional regressor, the sum of the residuals will not increase; it will often decrease. The reduction occurs at the cost of more regressors. To balance the reduction in errors and the increase in the number of regressors, the information criterion associates a penalty with this increase. Therefore, its equation has two parts: the first measures the quality of the model's fit to the data, while the second part is called the penalty function since it penalizes models with many parameters. Therefore, given all the combinations of models, we look for the one with the lowest AIC.
 
-Exemplos:
-- Modelo ARFIMA: (1, 0.25, 1) 
-- Modelo ARIMA: (2, 1, 1)
-- Modelo AR: (1, 0, 0)
-- Modelo MA (0, 0, 3)
-- Modelo I: (0, 2, 0)
-- Modelo ARMA: (4, 0, 1)
-- Modelo SARIMA: (1, 1, 2)(2, 0, 1)
 
-#### Akaike’s Information Criterion (AIC) e o Bayesian Information Criterion (BIC)
-Nos modelos mais avançados, as funções de autocorrelação e autocorrelação parcial não são informativas para definir a ordem dos modelos, por isso usasse um critério de informação. Um critério de informação é uma forma de encontrar o número ideal de parâmetros de um modelo, para entendê-lo, tenha em mente que, a cada regressor adicional, a soma dos resíduos não vai aumentar; frequentemente, diminuirá. A redução se dá à custa de mais regressores. Para balancear a redução dos erros e o aumento do número de regressores, o critério de informação associa uma penalidade a esse aumento. Sendo assim, sua equação apresenta duas partes: a primeira mede a qualidade do ajuste do modelo aos dados, enquanto a segunda parte é chamada de função de penalização dado que penaliza modelos com muitos parâmetros, sendo assim, dado todas as combinações de modelos procuramos aquele que apresenta menor AIC.
+
+
+
+
 
 #### Testes Estatísticos
 
@@ -169,7 +171,6 @@ $\widehat{u3}$ e $\widehat{u4}$ são as estimativas do terceiro e quarto momento
 
 - *H0: As subpopulações das variáveis aleatórias são homogêneas*
 - *H1: As subpopulações das variáveis aleatórias não são homogêneas*
-  
 
 #### Coeficientes de Correlação
 > Os coeficientes de correlação verificam a existência e o grau de associação entre dois conjuntos de dados.
