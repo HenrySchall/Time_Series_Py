@@ -25,7 +25,7 @@ processo estocástico é feita através de uma distribuição de probabilidade c
 - $𝜎^2(𝑡)=𝑉𝑎𝑟{𝑍(𝑡)}$ -> Variância 
 - $𝛾(𝑡1,𝑡2)=𝐶𝑜𝑣{𝑍(𝑡1),𝑍(𝑡2)}$ -> Autocovariância
 
-![Figura-31-Processo-estocastico-como-um-grupo-de-variaveis-aleatorias-Morettin-2008](https://github.com/user-attachments/assets/8fb5d0d8-4786-4f7b-b351-ed1c5a3b02a5)
+![estocastico](https://github.com/user-attachments/assets/d1a7faa1-0cad-46f2-bf2c-b369e13209c2)
 
 Estacionaridade -> é quando uma série temporal apresenta todas suas características estatísticas constante ao longo do tempo
 - Estacionaridade Fraca = é quando as propriedades estatiaticas, são constantes no tempo, E(x)=U, Var(x) = 𝜎^2, COV(X,X-n) = k (corariância entre observações em diferentes pontos no tempo depende do tempo específico em que elas ocorreram). Na literatura, geralmente estacionalidade significa estacionalidade fraca.
