@@ -58,25 +58,25 @@ Random Walk -> is the sum of small stochastic fluctuations (stochastic trend)
 
 ![Sem Título-1](https://github.com/user-attachments/assets/390abc00-d4aa-41bf-be96-6ec3eeaf7684)
 
-#### Modelos das séries temporais univariados:
-Modelos lineares:
- - Modelos autorregressivos (AR)
- - Modelos médias móveis (MA)
- - Modelos autorregressivos e médias móveis (ARMA)
- - Modelos autorregressivos integrados e de médias móveis (ARIMA)
- - Modelos de longas dependências temporais ou memória longa (ARFIMA)
- - Modelos autorregressivos integrados e de médias móveis com sazonalidade (SARIMA)
- 
-Modelos não lineares:
- - Autorregressivo com limiar (TAR)
- - Autorregressivo com transição suave (STAR)
- - Troca de regime markoviano (MSM)
- - Redes neurais artificiais autorregressivas (AR-ANN)
+#### Univariate time series models:
+Linear models:
+- Autoregressive models (AR)
+- Moving average models (MA)
+- Autoregressive and moving average models (ARMA)
+- Autoregressive integrated and moving average models (ARIMA)
+- Long time dependency or long memory models (ARFIMA)
+- Autoregressive integrated and moving average models with seasonality (SARIMA)
 
-Estrutura: 
-- Autorregressivo (AR): indica que a variável é regressada em seus valores anteriores. 
-- Integrado (I): indica que os valores de dados foram substituídos com a diferença entre seus valores e os valores anteriores (diferenciação).
-- Média móvel (MA): Indica que o erro de regressão é uma combinação linear dos termos de erro dos valores passados.
+Nonlinear models:
+- Autoregressive with threshold (TAR)
+- Autoregressive with smooth transition (STAR)
+- Markov regime switching (MSM)
+- Autoregressive artificial neural networks (AR-ANN)
+
+Structure:
+- Autoregressive (AR): indicates that the variable is regressed on its previous values.
+- Integrated (I): indicates that the data values ​​were replaced with the difference between their values ​​and the previous values ​​(differencing).
+- Moving average (MA): Indicates that the regression error is a linear combination of the error terms of the past values.
 
 Codificação: (p, d, q) Parâmetro d só pode ser inteiro, caso estivessemos trabalhando com um Modelo ARFIMA, o parâmetro d pode ser fracionado
 
