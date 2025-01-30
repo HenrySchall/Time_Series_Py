@@ -1,62 +1,60 @@
 ## Séries Temporais
-#### Objetivos:
-- Analisar a origem da série
-- Previsões futuras
-- Descrição do comportamento da série 
-- Analisar perodicidade ou tendência 
+### Introduction
+> A Time Series is a set of observations ordered in time or a particular slice of an unknown stochastic process.
 
-#### Tipos:
-- Univariada = apenas uma variável se altera ao longo do tempo
-- Multivariada = mais de uma variável se altera ao longo do tempo
+#### Mathematically: Y = Tdt + Szt + et.
 
-#### Conceitos:
-Série Temporal -> é um conjunto de observações ordenadas no tempo ou um corte particular de um processo estocástico desconhecido
-
-#### Matematicamente: Y = Tdt + Szt + et 
-- Tendência (Tdt): Mudanças graduais em longo prazo (crescimento populacional).
-- Sazonalidade (Szt): oscilações de subida e de queda que sempre ocorrem em um determinado período (maior valor da conta de energia elétrica no inverno).
-- Resíduos (et): apresenta movimentos ascendentes e descendentes da série após a retirada do efeito de tendência ou sazonal (sequência de variáveis aleatórias).
+* Trend (Tdt): Gradual changes in the long term (population growth).
+* Seasonality (Szt): upward and downward oscillations that always occur in a given period (higher electricity bills in winter).
+* Residuals (et): shows upward and downward movements in the series after removing the trend or seasonal effect (sequence of random variables).
 
 ![plot](https://github.com/user-attachments/assets/6cde76a5-8419-4d3c-b32b-1630c27b36a5)
 
-Processo Estocástico -> é uma coleção de variáveis aleatórias definidas num mesmo espaço de probabilidades (processo gerador de uma série de variáveis). A descrição de um 
-processo estocástico é feita através de uma distribuição de probabilidade conjunta (o que é muito complexo de se fazer), então geralmente descrevemos ele por meio das funções:
-- $𝜇(𝑡)=𝐸{𝑍(𝑡)}$ -> Média 
-- $𝜎^2(𝑡)=𝑉𝑎𝑟{𝑍(𝑡)}$ -> Variância 
-- $𝛾(𝑡1,𝑡2)=𝐶𝑜𝑣{𝑍(𝑡1),𝑍(𝑡2)}$ -> Autocovariância
+> Time series studies can be used for future predictions, description of serial behavior, and analysis of periodicity, trends, or even the process that generates the series. They are divided into two types:
+
+- Univariate = only one variable changes over time
+- Multivariate = more than one variable changes over time****
+
+### Initial Concepts
+
+Stochastic Process -> is a collection of random variables defined in the same probability space (process generating a series of variables). The description of a stochastic process is done through a joint probability distribution (which is very complex to do), so we usually describe it through the functions:
+- $𝜇(𝑡)=𝐸{𝑍(𝑡)}$ -> Average
+- $𝜎^2(𝑡)=𝑉𝑎𝑟{𝑍(𝑡)}$ -> Variance 
+- $𝛾(𝑡1,𝑡2)=𝐶𝑜𝑣{𝑍(𝑡1),𝑍(𝑡2)}$ -> Autocovariance
 
 ![estocastico](https://github.com/user-attachments/assets/d1a7faa1-0cad-46f2-bf2c-b369e13209c2)
 
-Estacionaridade -> é quando uma série temporal apresenta todas suas características estatísticas constante ao longo do tempo
-- Estacionaridade Fraca = é quando as propriedades estatiaticas, são constantes no tempo, E(x)=U, Var(x) = 𝜎^2, COV(X,X-n) = k (corariância entre observações em diferentes pontos no tempo depende do tempo específico em que elas ocorreram). Na literatura, geralmente estacionalidade significa estacionalidade fraca.
+> Stationarity -> is when a time series presents all its statistical characteristics constant over time
 
-- Estacionaridade Forte = também chamada de estrita, é quando a função de probabilidade conjunta é invariante no tempo, ou seja, as distribuições individuais são iguais para todos "ts". Com isso a covariância depende apenas da distância entre as observações e não do tempo especifico que ocorreram. 
+- Weak Stationarity = when the statistical properties are constant over time, E(x) = U, Var(x) = 𝜎², COV(X,X-n) = k (covariance between observations at different points in time depends on the specific time at which they occurred). In the literature, stationarity generally means weak stationarity.
+- Strong Stationarity = also called strict stationarity, is when the joint probability function is invariant over time, that is, the individual distributions are the same for all "ts". Therefore, the covariance depends only on the distance between the observations and not on the specific time at which they occurred.
 
-Autocorrelação -> é a correlação de determinados períodos anteriores com o período atual, ou seja, o grau de dependência serial. Cada período desse tipo de correlação é denominado lag (defasagem) e sua representação é feita pela Função de Autocorrelação (FAC) e a Função de Autocorrelação Parcial (FACP), ambas comparam o valor presente com os valores passados da série, a diferença entre eles é que a FAC analisa tanto a correlação direta como a indireta, já a FACP apenas correlação direta. Então podemos dizer, que a FAC vê a correlação direta do mês de janeiro em março e também a correlação indireta que o mês de janeiro teve em fevereiro que também teve em março, enquanto que a FACP apenas a correlação de janeiro em março. Essa análise é feita, porque é o pressuposto essencial para se criar previsões eficientes de uma série.
+Autocorrelation -> is the correlation of certain previous periods with the current period, that is, the degree of serial dependence. Each period of this type of correlation is called lag and its representation is made by the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PAF), both of which compare the present value with the past values ​​of the series. The difference between them is that the CAF analyzes both direct and indirect correlation, while the PAF only analyzes direct correlation. So we can say that the CAF sees the direct correlation of the month of January in March and also the indirect correlation that the month of January had in February, which also had in March, while the PAF only the correlation of January in March. This analysis is done because it is the essential assumption for creating efficient forecasts of a series.
 
 ![FAC](https://github.com/user-attachments/assets/4623a946-6427-4bc2-aadc-d8219df93db9)
 
 ![FACP](https://github.com/user-attachments/assets/9d577631-0da2-4101-b695-cfa4f35d2fc5)
 
-Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue uma distribuição normal, ou seja, um processo puramente aleatório. 
-- $E(Xt) = 0$ 
-- $Var(Xt) = 𝜎^2$
+> White Noise -> is when the error of a time series follows a normal distribution, that is, a purely random process.
+- E(Xt)=0
+- Var(Xt)=𝜎2
 
 ![Captura de tela 2025-01-30 132421](https://github.com/user-attachments/assets/0fbabff6-f692-48ad-bc84-bea27f7f30ae)
 
-Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
-Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
+Random Walk -> is the sum of small stochastic fluctuations (stochastic trend) 
+#### Mathematically: 𝑍𝑡=𝑍(𝑡−1)+et
 
 ![Captura de tela 2025-01-30 132324](https://github.com/user-attachments/assets/bf7ce3a1-560b-45ad-9d1c-459cea90fe26)
 
-Transformação e Suavização -> São técnicas que buscam deixar a série o mais próximo possível de uma distribuição normal. Transformando o valor das varáveis ou suavizando a tendência e/ou sazonaliade da série. Dentre todas as técnicas existentes podemos citar:
-1) Tranformação Log 
-2) Tranformação Expoencial
-3) Tranformação Box-Cox
-4) Suavização Média Móvel Exponencial (MME) - Curto período 
-5) Suavização por Média Móvel Simples (MMS) - Longo período
+> Transformation and Smoothing -> These are techniques that seek to make the series as close as possible to a normal distribution. Transforming the value of the variables or smoothing the trend and/or seasonality of the series. Among all the existing techniques we can mention:
 
-Diferenciação -> A diferenciação, busca transformar uma série não estacionária em estacionária, por meio da diferença de dois períodos consecutivos
+1) Log Transformation
+2) Exponential Transformation
+3) Box-Cox Transformation
+4) Exponential Moving Average Smoothing (EMA) - Short-term
+5) Simple Moving Average Smoothing (SMA) - Long-term
+
+> Differentiation -> Differentiation seeks to transform a non-stationary series into a stationary one, by means of the difference of two consecutive periods
 
 ![Sem Título-1](https://github.com/user-attachments/assets/390abc00-d4aa-41bf-be96-6ec3eeaf7684)
 
