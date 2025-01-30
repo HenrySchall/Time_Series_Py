@@ -47,7 +47,7 @@ Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue um
 Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
 Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
 
-![Captura de tela 2025-01-30 132324](https://github.com/user-attachments/assets/a333573f-c559-4775-8b6e-befff3829b71)
+![Captura de tela 2025-01-30 132324](https://github.com/user-attachments/assets/bf7ce3a1-560b-45ad-9d1c-459cea90fe26)
 
 Transformação e Suavização -> São técnicas que buscam deixar a série o mais próximo possível de uma distribuição normal. Transformando o valor das varáveis ou suavizando a tendência e/ou sazonaliade da série. Dentre todas as técnicas existentes podemos citar:
 1) Tranformação Log 
