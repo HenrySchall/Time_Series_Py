@@ -17,7 +17,7 @@ Série Temporal -> é um conjunto de observações ordenadas no tempo ou um cort
 - Sazonalidade (Szt): oscilações de subida e de queda que sempre ocorrem em um determinado período (maior valor da conta de energia elétrica no inverno).
 - Resíduos (et): apresenta movimentos ascendentes e descendentes da série após a retirada do efeito de tendência ou sazonal (sequência de variáveis aleatórias).
 
-![plot](https://github.com/user-attachments/assets/a6374079-305b-4635-ae20-cb4c083cee21)
+![plot](https://github.com/user-attachments/assets/6cde76a5-8419-4d3c-b32b-1630c27b36a5)
 
 Processo Estocástico -> é uma coleção de variáveis aleatórias definidas num mesmo espaço de probabilidades (processo gerador de uma série de variáveis). A descrição de um 
 processo estocástico é feita através de uma distribuição de probabilidade conjunta (o que é muito complexo de se fazer), então geralmente descrevemos ele por meio das funções:
@@ -25,7 +25,7 @@ processo estocástico é feita através de uma distribuição de probabilidade c
 - $𝜎^2(𝑡)=𝑉𝑎𝑟{𝑍(𝑡)}$ -> Variância 
 - $𝛾(𝑡1,𝑡2)=𝐶𝑜𝑣{𝑍(𝑡1),𝑍(𝑡2)}$ -> Autocovariância
 
-![Captura de tela 2024-07-04 180109](https://github.com/HenrySchall/Time-Series/assets/96027335/7ffc0399-4f35-4e82-ac69-8950c083c8f4)
+![Figura-31-Processo-estocastico-como-um-grupo-de-variaveis-aleatorias-Morettin-2008](https://github.com/user-attachments/assets/8fb5d0d8-4786-4f7b-b351-ed1c5a3b02a5)
 
 Estacionaridade -> é quando uma série temporal apresenta todas suas características estatísticas constante ao longo do tempo
 - Estacionaridade Fraca = é quando as propriedades estatiaticas, são constantes no tempo, E(x)=U, Var(x) = 𝜎^2, COV(X,X-n) = k (corariância entre observações em diferentes pontos no tempo depende do tempo específico em que elas ocorreram). Na literatura, geralmente estacionalidade significa estacionalidade fraca.
@@ -42,6 +42,8 @@ Autocorrelação -> é a correlação de determinados períodos anteriores com o
 Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue uma distribuição normal, ou seja, um processo puramente aleatório. 
 - $E(Xt) = 0$ 
 - $Var(Xt) = 𝜎^2$
+
+
 
 Transformação e Suavização -> São técnicas que buscam deixar a série o mais próximo possível de uma distribuição normal. Transformando o valor das varáveis ou suavizando a tendência e/ou sazonaliade da série. Dentre todas as técnicas existentes podemos citar:
 1) Tranformação Log 
