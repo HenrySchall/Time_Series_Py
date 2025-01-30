@@ -281,11 +281,11 @@ cujo posto é superior ao que se está calculando menos o número de elementos c
 
 > Exemplo: Dados os valores da tabela abaixo:
 
-![14](https://github.com/HenrySchall/Time-Series/assets/96027335/a886a3c7-1e07-429f-844f-782e88c480c7)
+
 
 > Calculando os valores obtemos o seguinte resultado:
 
-![17](https://github.com/HenrySchall/Time-Series/assets/96027335/aae35d85-d483-40ad-a41e-6261c2b36b97)
+
 
 > Tendo as seguintes hipóteses:
 
