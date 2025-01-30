@@ -34,16 +34,20 @@ Estacionaridade -> é quando uma série temporal apresenta todas suas caracterí
 
 ![Imagem-2](https://github.com/HenrySchall/Time-Series/assets/96027335/6c237676-00e5-407f-bcc7-cddf6c1c4a34)
 
-Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
-Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
-
 Autocorrelação -> é a correlação de determinados períodos anteriores com o período atual, ou seja, o grau de dependência serial. Cada período desse tipo de correlação é denominado lag (defasagem) e sua representação é feita pela Função de Autocorrelação (FAC) e a Função de Autocorrelação Parcial (FACP), ambas comparam o valor presente com os valores passados da série, a diferença entre eles é que a FAC analisa tanto a correlação direta como a indireta, já a FACP apenas correlação direta. Então podemos dizer, que a FAC vê a correlação direta do mês de janeiro em março e também a correlação indireta que o mês de janeiro teve em fevereiro que também teve em março, enquanto que a FACP apenas a correlação de janeiro em março. Essa análise é feita, porque é o pressuposto essencial para se criar previsões eficientes de uma série.
+
+![FAC](https://github.com/user-attachments/assets/4623a946-6427-4bc2-aadc-d8219df93db9)
+
+![FACP](https://github.com/user-attachments/assets/9d577631-0da2-4101-b695-cfa4f35d2fc5)
 
 Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue uma distribuição normal, ou seja, um processo puramente aleatório. 
 - $E(Xt) = 0$ 
 - $Var(Xt) = 𝜎^2$
 
+Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
+Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
 
+![Aleatorio](https://github.com/user-attachments/assets/1323feae-575e-4b9b-8d11-19c7d3413150)
 
 Transformação e Suavização -> São técnicas que buscam deixar a série o mais próximo possível de uma distribuição normal. Transformando o valor das varáveis ou suavizando a tendência e/ou sazonaliade da série. Dentre todas as técnicas existentes podemos citar:
 1) Tranformação Log 
