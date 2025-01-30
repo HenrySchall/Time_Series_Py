@@ -42,7 +42,7 @@ Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue um
 - $E(Xt) = 0$ 
 - $Var(Xt) = 𝜎^2$
 
-![Captura de tela 2025-01-30 132421](https://github.com/user-attachments/assets/07923dfe-f5b2-4fd0-b490-474059418a1f)
+![Captura de tela 2025-01-30 132421](https://github.com/user-attachments/assets/0fbabff6-f692-48ad-bc84-bea27f7f30ae)
 
 Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
 Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
