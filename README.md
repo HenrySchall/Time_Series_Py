@@ -32,8 +32,6 @@ Estacionaridade -> é quando uma série temporal apresenta todas suas caracterí
 
 - Estacionaridade Forte = também chamada de estrita, é quando a função de probabilidade conjunta é invariante no tempo, ou seja, as distribuições individuais são iguais para todos "ts". Com isso a covariância depende apenas da distância entre as observações e não do tempo especifico que ocorreram. 
 
-![Imagem-2](https://github.com/HenrySchall/Time-Series/assets/96027335/6c237676-00e5-407f-bcc7-cddf6c1c4a34)
-
 Autocorrelação -> é a correlação de determinados períodos anteriores com o período atual, ou seja, o grau de dependência serial. Cada período desse tipo de correlação é denominado lag (defasagem) e sua representação é feita pela Função de Autocorrelação (FAC) e a Função de Autocorrelação Parcial (FACP), ambas comparam o valor presente com os valores passados da série, a diferença entre eles é que a FAC analisa tanto a correlação direta como a indireta, já a FACP apenas correlação direta. Então podemos dizer, que a FAC vê a correlação direta do mês de janeiro em março e também a correlação indireta que o mês de janeiro teve em fevereiro que também teve em março, enquanto que a FACP apenas a correlação de janeiro em março. Essa análise é feita, porque é o pressuposto essencial para se criar previsões eficientes de uma série.
 
 ![FAC](https://github.com/user-attachments/assets/4623a946-6427-4bc2-aadc-d8219df93db9)
@@ -44,10 +42,12 @@ Ruído Branco (White Noise) -> é quando o erro de uma série temporal, segue um
 - $E(Xt) = 0$ 
 - $Var(Xt) = 𝜎^2$
 
+![Captura de tela 2025-01-30 132421](https://github.com/user-attachments/assets/07923dfe-f5b2-4fd0-b490-474059418a1f)
+
 Passeio Aleatório (Random Walk) -> é a soma de pequenas flutuações estocásticas (tendência estocástica)
 Matematicamente: $𝑍𝑡 = 𝑍(𝑡−1)+ et$
 
-![Aleatorio](https://github.com/user-attachments/assets/1323feae-575e-4b9b-8d11-19c7d3413150)
+![Captura de tela 2025-01-30 132324](https://github.com/user-attachments/assets/a333573f-c559-4775-8b6e-befff3829b71)
 
 Transformação e Suavização -> São técnicas que buscam deixar a série o mais próximo possível de uma distribuição normal. Transformando o valor das varáveis ou suavizando a tendência e/ou sazonaliade da série. Dentre todas as técnicas existentes podemos citar:
 1) Tranformação Log 
@@ -57,6 +57,8 @@ Transformação e Suavização -> São técnicas que buscam deixar a série o ma
 5) Suavização por Média Móvel Simples (MMS) - Longo período
 
 Diferenciação -> A diferenciação, busca transformar uma série não estacionária em estacionária, por meio da diferença de dois períodos consecutivos
+
+![Sem Título-1](https://github.com/user-attachments/assets/390abc00-d4aa-41bf-be96-6ec3eeaf7684)
 
 #### Modelos das séries temporais univariados:
 Modelos lineares:
@@ -94,8 +96,6 @@ Exemplos:
 - Modelo I: (0, 2, 0)
 - Modelo ARMA: (4, 0, 1)
 - Modelo SARIMA: (1, 1, 2)(2, 0, 1)
-
-#### Função de Autocorrelação (FAC) e Função de Autocorrelação Parcial (FACP)
 
 #### Akaike’s Information Criterion (AIC) e o Bayesian Information Criterion (BIC)
 Nos modelos mais avançados, as funções de autocorrelação e autocorrelação parcial não são informativas para definir a ordem dos modelos, por isso usasse um critério de informação. Um critério de informação é uma forma de encontrar o número ideal de parâmetros de um modelo, para entendê-lo, tenha em mente que, a cada regressor adicional, a soma dos resíduos não vai aumentar; frequentemente, diminuirá. A redução se dá à custa de mais regressores. Para balancear a redução dos erros e o aumento do número de regressores, o critério de informação associa uma penalidade a esse aumento. Sendo assim, sua equação apresenta duas partes: a primeira mede a qualidade do ajuste do modelo aos dados, enquanto a segunda parte é chamada de função de penalização dado que penaliza modelos com muitos parâmetros, sendo assim, dado todas as combinações de modelos procuramos aquele que apresenta menor AIC.
