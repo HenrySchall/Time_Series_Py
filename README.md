@@ -1,5 +1,6 @@
 ## Time Series
-### Introduction
+
+
 > A Time Series is a set of observations ordered in time or a particular slice of an unknown stochastic process. Mathematically: Y = Tdt + Szt + et.
 
 * Trend (Tdt): Gradual changes in the long term (population growth).
