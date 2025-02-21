@@ -1,6 +1,5 @@
 ## Time Series
 
-![Gere uma Imagem 02-02-2025 at 21-57-42](https://github.com/user-attachments/assets/bb106d4f-0fa1-4ecc-9ba3-48bca0610d2a)
 
 > A Time Series is a set of observations ordered in time or a particular slice of an unknown stochastic process. Mathematically: Y = Tdt + Szt + et.
 
